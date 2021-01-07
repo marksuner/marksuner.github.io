@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sample Email Verifier Test</title>
+
+	<style>
+		.container {
+			margin-bottom: 10px;
+			padding: 10px;
+			border: 1px solid gray;
+			border-radius: 5px;
+		}
+
+		input {
+			width: 96%;
+			padding: 10px 2%;
+			margin-bottom: 2px;
+		}
+	</style>
+
+</head>
+<body>
+	<div class="container">
+		<form action="index.php" method="post">
+			Input with different type of name
+			<input required type="text" autocomplete="off" name="email" placeholder="Enter email">
+			<input required type="text" autocomplete="off" name="e-mail" placeholder="Enter e-mail">
+			<input required type="text" autocomplete="off" name="e_mail" placeholder="Enter e_mail">
+			<input required type="text" autocomplete="off" name="email_address" placeholder="Enter email_address">
+			<input required type="text" autocomplete="off" name="email_add" placeholder="Enter email_add">
+		</form>
+	</div>
+
+	<div class="container">
+		<form action="index.php" method="post">
+			Input with type of email
+			<input required type="email" name="asdasd" placeholder="Enter email">
+		</form>
+	</div>
+
+
+	<div class="container">
+		<form action="index.php" method="post">
+			Input with required input
+			<input required type="email" name="asdasd" placeholder="Enter email" required>
+
+			<button type="submit">Submit</button>
+		</form>
+	</div>
+
+
+	<div class="container">
+		<form action="index.php" method="post">
+			Input with rendered input
+			<div id="container--render"></div>
+			<button type="button" id="container--btn-render">Render</button>
+			<button type="submit">Submit</button>
+		</form>
+	</div>
+
+  <!--MM EmailVerify PIXEL-->
+  <script src='https://staging-app.marketermagic.com/api/emailverify/4735b2d1-82b-b8884.js'></script>
+  <!--END MM EmailVerify PIXEL-->
+
+	<script>
+		( function() {
+			var btnRender = document.getElementById('container--btn-render');
+
+			btnRender.onclick = function() {
+				var containerRender = document.getElementById('container--render');
+				containerRender.innerHTML  = '<input required type="email" name="asdasd" placeholder="Enter email" required>';
+			}
+		})();
+	</script>
+</body>
+</html>
