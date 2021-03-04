@@ -2,6 +2,7 @@
   var PROJECT = {
       TOKEN: '86827510-0e5-1ea8f',
       PATH: 'http://marketermagic.test',
+      LOGO: this.PATH + '/images/poweredby.png',
   };
 
   // Returns a function, that, as long as it continues to be invoked, will not
@@ -149,6 +150,8 @@
               console.log('show not a valid email');
               return ;
           }
+
+
           // reset notification
           // validate to MM api
 
@@ -188,6 +191,14 @@
       inputs = inputs.filter(isValidInput);
 
       inputs.forEach(createMirror);
+  }
+
+
+  /**
+   * create notification box at the bottom
+   */
+  function createNotificationBox() {
+
   }
 
   /**
@@ -250,6 +261,7 @@
   function init() {
       addCSS();
       addMirror();
+      createNotificationBox();
   }
 
   // init mm
